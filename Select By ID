@@ -1,0 +1,7 @@
+QUESTION LINK:-
+https://www.hackerrank.com/challenges/select-by-id/problem?isFullScreen=true
+
+SOLUTION:-
+
+SELECT * FROM CITY
+WHERE ID="1661";
