@@ -1,0 +1,14 @@
+QUESTION LINK:-
+https://www.hackerrank.com/challenges/the-blunder/problem?isFullScreen=true
+
+
+SOLUTION:-
+
+WITH SalaryData AS (
+    SELECT 
+        AVG(salary) AS actual_average_salary,
+        AVG(CAST(REPLACE(salary, '0', '') AS DECIMAL)) AS miscalculated_average_salary
+    FROM employees
+)
+SELECT CEIL(actual_average_salary - miscalculated_average_salary) AS error_amount
+FROM SalaryData;
