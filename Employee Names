@@ -1,0 +1,8 @@
+QUESTION LINK:-
+https://www.hackerrank.com/challenges/name-of-employees/problem?isFullScreen=true
+
+SOLUTION:-
+
+SELECT NAME 
+FROM EMPLOYEE
+ORDER BY NAME;
