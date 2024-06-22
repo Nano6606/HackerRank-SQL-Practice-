@@ -1,0 +1,8 @@
+QUESTION LINK:-
+https://www.hackerrank.com/challenges/revising-the-select-query/problem?isFullScreen=true
+
+
+SOLUTION:
+
+SELECT * FROM CITY
+WHERE (POPULATION>100000) AND (COUNTRYCODE='USA');
