@@ -1,0 +1,7 @@
+QUEATION LINK:-
+https://hackerrank.com/challenges/japanese-cities-attributes/problem?isFullScreen=true
+
+SOLUTION:-
+
+SELECT * FROM CITY
+WHERE COUNTRYCODE='JPN';
