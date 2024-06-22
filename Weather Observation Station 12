@@ -1,0 +1,8 @@
+QUESTION LINK:-
+https://www.hackerrank.com/challenges/weather-observation-station-12/problem?isFullScreen=true
+
+SOLUTION:-
+
+SELECT DISTINCT CITY
+FROM STATION
+WHERE CITY RLIKE '^[^aeiouAEIOU].*[^aeiouAEIOU]$';
