@@ -1,0 +1,7 @@
+QUESTION LINK:-
+https://www.hackerrank.com/challenges/average-population/problem?isFullScreen=true
+
+SOLUTION:-
+
+SELECT FLOOR(AVG(population))
+FROM CITY;
