@@ -1,0 +1,12 @@
+QUESTION LINK:-
+https://www.hackerrank.com/challenges/average-population-of-each-continent/problem?isFullScreen=true
+
+SOLUTION:-
+
+SELECT
+CO.Continent,
+FLOOR(AVG(CI.Population))
+FROM CITY CI
+JOIN COUNTRY CO 
+ON CI.CountryCode = CO.Code
+GROUP BY CO.Continent;
