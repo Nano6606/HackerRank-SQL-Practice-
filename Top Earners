@@ -1,0 +1,9 @@
+QUESTION LINK:-
+https://www.hackerrank.com/challenges/earnings-of-employees/problem?isFullScreen=true
+
+SOLUTION:-
+
+SELECT MAX(SALARY*MONTHS), COUNT(*)
+FROM EMPLOYEE
+WHERE (SALARY*MONTHS) = (SELECT MAX(SALARY*MONTHS)
+                         FROM EMPLOYEE);
