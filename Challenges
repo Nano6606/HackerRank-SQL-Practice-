@@ -1,0 +1,28 @@
+QUESTION LINK:-
+https://www.hackerrank.com/challenges/challenges/problem?isFullScreen=true
+
+SOLUTION:-
+
+SELECT h.hacker_id, h.name, COUNT(c.challenge_id) as c_count
+FROM Hackers h 
+INNER JOIN Challenges c ON c.hacker_id = h.hacker_id
+GROUP BY h.hacker_id, h.name
+HAVING COUNT(c.challenge_id) = (
+    SELECT COUNT(c2.challenge_id) as c_max 
+    FROM Challenges c2 
+    GROUP BY c2.hacker_id 
+    ORDER BY c_max DESC
+    LIMIT 1
+) 
+OR COUNT(c.challenge_id) IN (
+    SELECT DISTINCT c_compare as c_unique 
+    FROM (
+        SELECT h2.hacker_id, h2.name, COUNT(c.challenge_id) as c_compare 
+        FROM Hackers h2 
+        INNER JOIN Challenges c ON h2.hacker_id = c.hacker_id
+        GROUP BY h2.hacker_id, h2.name
+    ) counts
+    GROUP BY c_compare 
+    HAVING COUNT(c_compare) = 1
+)
+ORDER BY c_count DESC, h.hacker_id;
