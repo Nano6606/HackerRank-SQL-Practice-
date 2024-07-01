@@ -1,0 +1,16 @@
+QUESTION LINK:-
+https://www.hackerrank.com/challenges/harry-potter-and-wands/problem?isFullScreen=true
+
+SOLUTION:-
+
+SELECT a.ID, b.AGE, a.COINS_NEEDED, a.POWER
+FROM WANDS a 
+JOIN WANDS_PROPERTY b
+ON a.CODE=b.CODE
+WHERE b.IS_EVIL=0 AND a.COINS_NEEDED = (SELECT MIN(COINS_NEEDED) 
+FROM WANDS al JOIN WANDS_PROPERTY bl 
+ON al.CODE = bl.CODE
+WHERE a.POWER=al.POWER
+AND b.AGE=bl.AGE
+)
+ORDER BY a.POWER DESC, B.AGE DESC;
