@@ -1,0 +1,14 @@
+QUESTION LINK:-
+https://www.hackerrank.com/challenges/draw-the-triangle-2/problem?isFullScreen=true
+
+SOLUTION:-
+
+WITH RECURSIVE cte AS (
+    SELECT 1 AS num
+    UNION ALL
+    SELECT num + 1
+    FROM cte
+    WHERE num < 20
+)
+SELECT REPEAT('* ', num) AS pattern
+FROM cte;
