@@ -1,0 +1,18 @@
+QUESTION LINK:-
+https://www.hackerrank.com/challenges/print-prime-numbers/problem?isFullScreen=true
+
+SOLUTION:-
+
+WITH RECURSIVE Numbers AS (
+    SELECT 2 AS num
+    UNION ALL
+    SELECT num + 1 FROM Numbers WHERE num < 1000
+),
+Primes AS (
+    SELECT n.num AS prime
+    FROM Numbers AS n
+    LEFT JOIN Numbers AS d ON d.num < n.num AND n.num % d.num = 0
+    WHERE d.num IS NULL
+)
+SELECT GROUP_CONCAT(prime ORDER BY prime SEPARATOR '&')
+FROM Primes;
